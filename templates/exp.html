@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Edit Project</div>{% endblock title %}
+{% block body %}
+<form method="post" action='/about/'>
+{% csrf_token %}
+
+<input type="hidden" name="id" value="2">
+  <div class="mb-3">
+    <label for="exampleInputEmail1"  class="form-label">Company </label>
+    <input type="text" class="form-control" name='company' id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1"  class="form-label">Designation</label>
+    <input type="text" class="form-control" name='desi' id="exampleInputPassword1">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword3"  class="form-label">Description</label>
+    <input type="text" class="form-control" name='desc' id="exampleInputPassword3">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword2"  class="form-label">Months worked</label>
+    <input type="text" class="form-control" name='year' id="exampleInputPassword2">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock body %}
