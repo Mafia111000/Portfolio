@@ -133,10 +133,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # meine daala
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-    '/var/www/static/',
-]
+#STATICFILES_DIRS = [
+#    BASE_DIR / "static",
+#    '/var/www/static/',
+#]
 import os
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 django_heroku.settings(locals())
