@@ -1,0 +1,1 @@
+web: gunicorn MAFIA.wsgi:application --log-file -

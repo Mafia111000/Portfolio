@@ -25,20 +25,33 @@ def Home(request):
 def about(request):
     if request.method == 'POST':
         reqq=request.POST.get('id')
-        print(reqq)
+        task=request.POST.get('task')
+        print(task)
+        print(str(reqq)+ "---")
         if reqq=='0':
             if request.POST.get('pass')=='1379':
                 Type=request.POST.get('type')
                 if Type == 'Projects':
-                    return render(request,'projext.html')
+                    if task=='1':
+                        EditProj.objects.all().last().delete()
+                    elif task=='0':
+                        return render(request,'projext.html')
                 if Type == 'Work Experience':
-                    return render(request,'exp.html')
+                    if task=='1':
+                        EditExp.objects.all().last().delete()
+                    elif task=='0':
+                        return render(request,'exp.html')
                 if Type == 'Skills':
-                    return render(request,'skills.html') 
-                if Type == 'Links':
-                    return render(request,'links.html')
+                    if task=='1':
+                        EditSkill.objects.all().last().delete()
+                        
+                    elif task=='0':
+                        return render(request,'skills.html') 
                 if Type == 'Education':
-                    return render(request,'edu.html')
+                    if task=='1':
+                        EditEdu.objects.all().last().delete()
+                    elif task=='0':
+                        return render(request,'edu.html')
             else:
                 return render(request,'fuck.html')    
         if reqq=='1':

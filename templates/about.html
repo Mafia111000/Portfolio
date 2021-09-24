@@ -1,20 +1,32 @@
 {% extends 'base.html' %}
 {% block title %}EDIT ur PORTO{% endblock title %}
 {% block body %}
-<div class="container-fluid px-0">
-    <style>
-        .mafia {
-            width: 100%;
-            height: 60%;
-        }
-    </style>
-    <img class='mafia' src="https://source.unsplash.com/1200x400/?drawing">
-</div>
+<br><br><br><br><br><br>
 <form action="/about/" method="post">
 {% csrf_token %}
     <input type="hidden" name="id" value="0">
+    <input type="hidden" name="task" value="0">
     <div class="container mb-3" >
     <label for="exampleDataList" class="form-label">What you want to ADD ?</label>
+    <input class="form-control" name="type" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+    <input class="form-control" name="pass" type="password"   id="exampleDataList" placeholder="password?">
+    <datalist id="datalistOptions">
+        <option value="Work Experience">
+        <option value="Skills">
+        <option value="Projects">
+        <option value="Links">
+        <option value="Education">
+    </datalist>
+    <button type="submit" class="btn btn-primary" >Confirm!</button>
+    
+</div></form>
+<hr>
+<form action="/about/" method="post">
+{% csrf_token %}
+    <input type="hidden" name="id" value="0">
+    <input type="hidden" name="task" value="1">
+    <div class="container mb-3" >
+    <label for="exampleDataList" class="form-label">What you want to Delete ?</label>
     <input class="form-control" name="type" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
     <input class="form-control" name="pass" type="password"   id="exampleDataList" placeholder="password?">
     <datalist id="datalistOptions">
